@@ -8,10 +8,13 @@ def calculate_demographic_data(print_data=True):
     race_count = pd.Series(df['race']).value_counts()
 
     # What is the average age of men?
-    average_age_men = None
+    mean_xy = df.loc[df['sex'] == 'Male','age'].mean();
+    average_age_men = round(mean_xy,1)
 
     # What is the percentage of people who have a Bachelor's degree?
-    percentage_bachelors = None
+    
+    prom = df[df["education"] == "Bachelors"]
+    percentage_bachelors = round((len(prom) / len(df))*100,2)
 
     # What percentage of people with advanced education (`Bachelors`, `Masters`, or `Doctorate`) make more than 50K?
     # What percentage of people without advanced education make more than 50K?
