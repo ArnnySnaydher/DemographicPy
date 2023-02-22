@@ -54,6 +54,7 @@ def calculate_demographic_data(print_data=True):
     Occupation_india = df[(df['salary']=='>50K') & (df['native-country']=='India')].value_counts(df['occupation'])
     top_IN_occupation = Occupation_india.index[Occupation_india == max(Occupation_india)][0]
 
+
     # DO NOT MODIFY BELOW THIS LINE
 
     if print_data:
